@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/fragment_page_1_id">
+
+    <fragment
+        android:id="@+id/fragment_page_1_id"
+        android:name="com.johnlion.android_jatpack_navigation.Page1Fragment"
+        android:label="fragment_page_1_label"
+        tools:layout="@layout/fragment_page_1">
+        <action
+            android:id="@+id/action_page_1_to_page_2"
+            app:destination="@id/fragment_page_2_id"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_page_2_id"
+        android:name="com.johnlion.android_jatpack_navigation.Page2Fragment"
+        android:label="fragment_page_2_label"
+        tools:layout="@layout/fragment_page_2">
+        <action
+            android:id="@+id/action_page_2_to_page_3"
+            app:destination="@id/fragment_page_3_id"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_page_2_to_page_1"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/fragment_page_1_id" />
+        <argument
+            android:name="myInteger"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <argument
+            android:name="myString"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="myBoolean"
+            android:defaultValue="false"
+            app:argType="boolean" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_page_3_id"
+        android:name="com.johnlion.android_jatpack_navigation.Page3Fragment"
+        android:label="fragment_page_1_label"
+        tools:layout="@layout/fragment_page_3">
+        <action
+            android:id="@+id/action_page_3_to_page_2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/fragment_page_2_id" />
+    </fragment>
+
+</navigation>
